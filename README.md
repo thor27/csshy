@@ -3,12 +3,17 @@
 Imporved ClusterSSH for modern terminals like terminator and tilix, to manage a cluster of nodes through ssh connections
 launches multiple splits with ssh connections to each node
 
-## TODO
+## TODO to go beta
+
+This project was created in a single Hackathon, so still have a long run to be beta quality. Any help is appreciated:
+
 * Add command line arguments to create/remove/modify cluster so there is no need to edit json files
 * Improve `guess` terminal detection for other DE (KDE and XFCE at least)
 * Add more backends
-* Make it compatible with other platforms (OS X, Windows)
+* Make it compatible with other platforms (at least OS X)
 * Improve terminator code to use tempfile instead of creating a profile inside terminator
+* Write automated unit tests
+* Improve overall code quality
 
 ## Migrate from csshnator
 If you are a previous csshnator user, you can migrate your old configuration with `migrate_settings_from_csshnator.py` script, just run it to get your cluster settings migrated
