@@ -1,18 +1,13 @@
-from utils import compute_geometry, get_start_script
+from .utils import compute_geometry, get_start_script, get_screen_size
 from configobj import ConfigObj
 from shutil import copyfile
 import subprocess
 import os
-import wx
 
 
 def terminator_backend(login, cluster_nodes, cluster_name):
     home = os.path.expanduser("~")
-
-    app = wx.App(False)
-    width, height = wx.GetDisplaySize()
-    app.Destroy()
-
+    width, height = get_screen_size()
     config_path = home + "/.config/terminator/config_csshnator"
     copyfile(home + "/.config/terminator/config", config_path)
     terminator_config = ConfigObj(config_path)
@@ -111,7 +106,7 @@ def terminator_backend(login, cluster_nodes, cluster_name):
     terminator_config["layouts"][configname] = cssh_layout
     terminator_config["global_config"]["broadcast_default"] = "all"
     terminator_config.write()
-    subprocess.Popen(
+    process = subprocess.Popen(
         [
             "terminator",
             "-u",
@@ -120,3 +115,5 @@ def terminator_backend(login, cluster_nodes, cluster_name):
             "--title", "CSSHY - {}".format(cluster_name)
         ]
     )
+    process.wait()
+    return process.returncode == 0

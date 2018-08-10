@@ -1,8 +1,8 @@
 import subprocess
 import os
-from tilix import tilix_backend
-from terminator import terminator_backend
-from cssh import cssh_backend
+from .tilix import tilix_backend
+from .terminator import terminator_backend
+from .cssh import cssh_backend
 
 
 # Terminals, by order of preference

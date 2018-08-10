@@ -9,13 +9,12 @@ launches multiple splits with ssh connections to each node
 * Add more backends
 * Change this to a instalable python package and make it available on pypi
 * Make it compatible with other platforms (OS X, Windows)
+* Improve terminator code to use tempfile instead of creating a profile inside terminator
 
 ## Migrate from csshnator
-
 If you are a previous csshnator user, you can migrate your old configuration with `migrate_settings_from_csshnator.py` script, just run it to get your cluster settings migrated
 
 ## Usage
-
 To use it, just pass all hostnames as arguments on command line, like that:
 ```bash
 csshy -l user host1 host2 host3

@@ -1,4 +1,4 @@
-from utils import compute_geometry, get_start_script
+from .utils import compute_geometry, get_start_script
 from tempfile import mkstemp
 import json
 import subprocess
@@ -65,7 +65,8 @@ def tilix_backend(login, cluster_nodes, cluster_name):
     try:
         with open(filename, 'w') as f:
             json.dump(config, f)
-        process = subprocess.Popen(["tilix", "-s", f.name], stdout=subprocess.PIPE)
+        process = subprocess.Popen(["tilix", "-s", f.name])
         process.wait()
     finally:
         os.unlink(filename)
+    return process.returncode == 0

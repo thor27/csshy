@@ -1,13 +1,9 @@
 #!/usr/bin/env python
-# try:
-#     import gtk
-# except ImportError:
-#     from gi.repository import Gtk as gtk
 import sys
 import argparse
 import os
 import json
-from backends import get_backend
+from .backends import get_backend
 
 SUCCESS, FAIL = 0, 1
 
@@ -101,8 +97,8 @@ def load_config():
     return config
 
 
-def main(argv):
-    args = parse_args(argv)
+def main():
+    args = parse_args(sys.argv[1:])
     cssh_config = load_config()
 
     if args.show:
@@ -122,8 +118,9 @@ def main(argv):
     if not backend:
         print("No valid terminal available. Please install tilix, terminator or cssh")
 
-    return backend(args.login, cluster_nodes, args.cluster_name)
+    result = backend(args.login, cluster_nodes, args.cluster_name)
+    return SUCCESS if result else FAIL
+
 
 if __name__ == "__main__":
-    ret_value = main(sys.argv[1:])
-    sys.exit(ret_value)
+    sys.exit(main())
