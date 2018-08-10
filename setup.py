@@ -8,7 +8,7 @@ def readme():
 
 setup(
       name='csshy',
-      version='0.1',
+      version='0.2',
       description='Improved ClusterSSH for modern terminals like Terminator and Tilix',
       long_description=readme(),
       classifiers=[
