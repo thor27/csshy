@@ -26,7 +26,7 @@ def guess_from_text(text):
 
 
 def guess_default_terminal():
-    active_desktop = os.environ.get("XDG_CURRENT_DESKTOP").lower()
+    active_desktop = os.environ.get("XDG_CURRENT_DESKTOP", "").lower()
 
     # Guess when running gnome
     if "gnome" in active_desktop or "unity" in active_desktop:
