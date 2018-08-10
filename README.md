@@ -3,6 +3,13 @@
 Imporved ClusterSSH for modern terminals like terminator and tilix, to manage a cluster of nodes through ssh connections
 launches multiple splits with ssh connections to each node
 
+## TODO
+* Add command line arguments to create/remove/modify cluster so there is no need to edit json files
+* Improve `guess` terminal detection for other DE (KDE and XFCE at least)
+* Add more backends
+* Change this to a instalable python package and make it available on pypi
+* Make it compatible with other platforms (OS X, Windows)
+
 ## Migrate from csshnator
 
 If you are a previous csshnator user, you can migrate your old configuration with `migrate_settings_from_csshnator.py` script, just run it to get your cluster settings migrated
