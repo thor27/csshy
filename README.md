@@ -1,4 +1,4 @@
-# CSSHY - alpha version
+# CSSHY - Alpha Version
 
 Imporved ClusterSSH for modern terminals like terminator and tilix, to manage a cluster of nodes through ssh connections
 launches multiple splits with ssh connections to each node
@@ -47,12 +47,12 @@ In `terminal` you can choose between `guess`, `terminator`, `tilix` and `cssh`. 
 To use the cluster you created just pass the `-c` argument
 
 ```bash
-ccshnator -l <user> -c <clustername>
+csshy -l <user> -c <clustername>
 ```
 
 example:
 ```bash
-ccshnator -l thor27 -c cluster1
+csshy -l thor27 -c cluster1
 ```
 
 For more usage information you can consult the help:
