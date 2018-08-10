@@ -7,12 +7,17 @@ launches multiple splits with ssh connections to each node
 * Add command line arguments to create/remove/modify cluster so there is no need to edit json files
 * Improve `guess` terminal detection for other DE (KDE and XFCE at least)
 * Add more backends
-* Change this to a instalable python package and make it available on pypi
 * Make it compatible with other platforms (OS X, Windows)
 * Improve terminator code to use tempfile instead of creating a profile inside terminator
 
 ## Migrate from csshnator
 If you are a previous csshnator user, you can migrate your old configuration with `migrate_settings_from_csshnator.py` script, just run it to get your cluster settings migrated
+
+## Install
+To install you need to have `Python 3` (tested with `3.6` but might work with older versions) and `pip`. Then you just need to:
+```bash
+pip install csshy
+```
 
 ## Usage
 To use it, just pass all hostnames as arguments on command line, like that:
